@@ -1,0 +1,95 @@
+# Laravel Practice 기록
+
+## 환경 설정
+
+### php installation
+
+```
+brew install php
+```
+
+### php version
+``` 
+php -v
+```
+
+
+### Composer installation
+
+[composer docs link](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos)
+```
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
+
+add composer globally
+```
+sudo mv composer.phar /usr/local/bin/composer
+```
+
+### composer version
+```
+composer --version
+```
+
+
+
+### Laravel installation
+
+```
+composer global require "laravel/installer"
+```
+
+### laravel path variable 
+```
+vi ~/.bash_profile
+```
+
+add path
+```
+export PATH="$PATH:$HOME/.composer/vendor/bin"
+```
+
+apply path 
+```
+source ~/.bash_profile
+```
+
+
+### Project initialization
+```
+laravel new (PJNAME)
+```
+
+- about starter kit
+
+    None: 아무것도 포함하지 않고 가장 기본적인 상태로 시작
+    React: React.js를 프론트엔드 라이브러리로 사용하기 위한 설정 포함
+    Vue: Vue.js를 프론트엔드 라이브러리로 사용하기 위한 설정 포함
+    Livewire: Laravel Livewire를 사용하여 서버 사이드 렌더링과 인터랙티브 UI를 구축하기 위한 설정 포함
+
+- about testing framework
+
+    PHPUnit은 PHP에서 가장 오래되고 널리 쓰이는 공식 테스트 프레임워크로, 강력하고 유연하다. Laravel도 기본적으로 PHPUnit 기반 테스트를 지원한다.
+    Pest는 PHPUnit 위에 만들어진 좀 더 간결하고 직관적인 문법을 제공하는 테스트 프레임워크다. 가독성이 뛰어나고 빠르게 테스트 코드를 작성할 수 있어 최근 많이 선호된다.
+
+- about database application
+
+    SQLite
+    MySQL
+    MariaDB
+    PostgreSQL
+    SQL Servce
+
+- about migration
+
+    install npm with frontend
+
+### run server
+```
+php artisan serve
+```
+
+
